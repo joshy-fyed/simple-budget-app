@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExpenseLog extends StatelessWidget {
-  const ExpenseLog({super.key});
+  final String expenseTitle;
+  final String? expenseDescription;
+  final String expenseAmount;
+  const ExpenseLog({super.key, required this.expenseTitle, required this.expenseAmount, this.expenseDescription});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +18,15 @@ class ExpenseLog extends StatelessWidget {
           onTap: () {},
           leading: const Icon(Icons.fastfood, color: Colors.orange),
           title: Text(
-            "Groceries - Food",
+            expenseTitle,
             style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
           ),
           subtitle: Text(
-            "belcris run",
+            expenseDescription ?? '',
             style: TextStyle(fontSize: 10.sp),
           ),
           trailing: Text(
-            "410.00",
+            expenseAmount,
             style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
           )),
     );

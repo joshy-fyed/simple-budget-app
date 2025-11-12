@@ -65,7 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             const Gap(20),
-            const ExpenseLog()
+            const ExpenseLog(
+              expenseTitle: "Grocery - Food",
+              expenseAmount: "400.00",
+              expenseDescription: "belcris run",
+            )
           ],
         ),
       ),
